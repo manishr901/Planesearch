@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- jquery email validation demo
+Source: https://tools.verifyemailaddress.io/Articles/Validate_Email/
+-->
+<html>
+	<head>
+		<title>jQuery Email Validation Demo</title>
+	</head>
+	<body>
+		<form id="form1">
+			<label for="email">Email Address</label><br/>
+			<input type="email" id="email" required="required"/><br/>
+			<input type="submit" value="submit"/>
+		</form>
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+		<script>
+		$('#form1').validate();
+		</script>
+		
+	</body>
+</html>

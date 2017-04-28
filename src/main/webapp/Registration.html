@@ -1,0 +1,244 @@
+<html>
+<head>
+<!-- Add the script to the HEAD of your document -->
+<SCRIPT>
+
+var scrl = " Welcome to FlightSearching ";
+function scrlsts() {
+ scrl = scrl.substring(1, scrl.length) + scrl.substring(0, 1);
+ document.title = scrl;
+ setTimeout("scrlsts()", 300);
+ }
+
+</script>
+
+
+<!-- Add the event loader to the body tag as below -->
+
+<body onLoad="scrlsts()">
+
+
+<script src="./js/lib/jQuery/jquery.min.js"></script>
+<script src="./js/lib/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+<script src="knockout-3.4.1.js"></script>
+<script src="registration.js" type="text/javascript"></script>
+<script src="./js/lib/jQuery/jquery.color-2.1.2.js"></script>
+<script src="./js/lib/jQuery/jquery.validate.min.js"></script>
+
+</head>
+<body>
+	<form id="form" method="post" class="form-horizontal"
+		action="Registration">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend>Form Name</legend><span>
+			
+			<h2>if already registered <a href="Login.jsp">Login</a></h2></span>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="name">Name</label>
+				<div class="col-md-4">
+					<input id="name" name="name" type="text"
+						data-bind="value: name" placeholder="Enter your name"
+						class="form-control input-md" required="required">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="email">Email</label>
+				<div class="col-md-4">
+					<input id="email" name="email" type="email"
+						data-bind="value :email"
+						placeholder="Enter your email id" class="form-control input-md"
+						required="*"><div id="okemail">OK  </div>
+						<div id="nookemail"> Try some different email it exists</div>
+
+				</div>
+			</div>
+
+			<!-- Password input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="password">Password</label>
+				<div class="col-md-4">
+					<input id="password" name="password" type="password"
+						placeholder="Enter a password" class="form-control input-md"
+						required="*">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="contact">Contact
+					no.</label>
+				<div class="col-md-4">
+					<input id="contact" name="contact" type="text"
+						data-bind="value :contact"
+						placeholder="Enter your contact no." class="form-control input-md"
+						required="">
+
+				</div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="blood_group">Blood
+					Group</label>
+				<div class="col-md-4">
+					<select id="blood_group" name="blood_group" class="form-control"
+						data-bind="value: bloodgroup">
+						<option value="">Select</option>
+						<option value="A+">A+</option>
+						<option value="B+">B+</option>
+						<option value="AB+">AB+</option>
+						<option value="O+">O+</option>
+						<option value="A-">A-</option>
+						<option value="B-">B-</option>
+						<option value="AB-">AB-</option>
+						<option value="O-">O-</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="Country list">Country
+					list</label>
+				<div class="col-md-4">
+					<select id="country" name="country" class="form-control"
+						data-bind="value: country, options:countriesList, optionsText: 'value',optionsValue:'id', selectedIndexes:0">
+					</select>
+
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="City list">City
+					list</label>
+				<div class="col-md-4">
+					<select id="city" name="city" class="form-control"
+						data-bind="value:city, options:statesList">
+						<option value="">Select</option>
+
+					</select>
+
+				</div>
+
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="street">Street</label>
+				<div class="col-md-4">
+					<input id="street" name="street" type="text"
+						placeholder="Enter your street" class="form-control input-md"
+						data-bind="value :street" required>
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="area">Area</label>
+				<div class="col-md-4">
+					<input id="area" name="area" type="text"
+						placeholder="Enter your area" class="form-control input-md"
+						data-bind="value:area" required>
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="district">District</label>
+				<div class="col-md-4">
+					<input id="district" name="dist" type="text"
+						placeholder="Enter your district" class="form-control input-md"
+						data-bind="value :district" required="">
+
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="signup"></label>
+				<div class="col-md-4">
+					<input id="agree" type="checkbox" />I agree to conditions
+					<button type="submit" id="signup" name="signup"
+						class="btn btn-success">Sign Up</button>
+					<button type="button" id="info" name="info" class="btn btn-info">show
+						details</button>
+
+				</div>
+				<br>
+				<div align="center" class="form-group">
+	<h1>From Knockoutjs</h1>
+					<table>
+
+						<tbody>
+							<tr>
+								<td>Name:</td>
+								<td data-bind="text: name"></td>
+							</tr>
+							<tr>
+								<td>Email:</td>
+								<td data-bind="text: email"></td>
+							</tr>
+							<tr>
+								<td>Contact:</td>
+								<td data-bind="text: contact"></td>
+							</tr>
+							<tr>
+								<td>Bloodgroup:</td>
+								<td data-bind="text: bloodgroup"></td>
+							</tr>
+							<tr>
+								<td>Country:</td>
+								<td data-bind="text: country"></td>
+							</tr>
+							<tr>
+								<td>City:</td>
+								<td data-bind="text: city"></td>
+							</tr>
+							<tr>
+								<td>Street:</td>
+								<td data-bind="text: street"></td>
+							</tr>
+							<tr>
+								<td>AREA:</td>
+								<td data-bind="text: area"></td>
+							</tr>
+							<tr>
+								<td>District:</td>
+								<td data-bind="text: district"></td>
+							</tr>
+						</tbody>
+	
+					</table>
+				<br>
+				<br><br>
+				</div>
+				<div align="center" class="form-group">
+				<h1>From javascript</h1>
+					Your Details <br>NAME:- <span id="sinfoname"></span> <br>Email:-
+					<span id="sinfoemail"></span> <br>Contact:- <span
+						id="sinfocontact"></span> <br>Blood group:- <span
+						id="sinfobloodgroup"></span> <br>Country list:- <span
+						id="sinfocountrylist"></span> <br>City:- <span id="sinfocity"></span>
+					<br>Street:- <span id="sinfostreet"></span> <br>Area:- <span
+						id="sinfoarea"></span> <br>District:- <span
+						id="sinfodistrict"></span>
+				</div>
+
+
+
+			</div>
+		</fieldset>
+	</form>
+
+	
+</body>
+</html>
