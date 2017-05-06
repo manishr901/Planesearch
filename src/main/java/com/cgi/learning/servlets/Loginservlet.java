@@ -34,7 +34,7 @@ public class Loginservlet extends HttpServlet {
 		Connection con = DBUtils.getConnection();
 		
 		try {
-			
+			System.out.println("sdf");
 			
 			if (email.equals("admin@admin.com") && password.equals("admin")) {
 				HttpSession session = req.getSession();
