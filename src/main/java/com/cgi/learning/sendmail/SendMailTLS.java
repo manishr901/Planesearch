@@ -49,7 +49,7 @@ public class SendMailTLS {
 			Transport.send(message);
 			System.out.println();
 		log.log(Level.INFO,"forget password email sent for "+email);
-
+System.out.println();
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
 		}
